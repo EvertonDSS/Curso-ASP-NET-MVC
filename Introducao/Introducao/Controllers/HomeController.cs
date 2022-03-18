@@ -9,9 +9,11 @@ namespace Introducao.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public string Index()
-        {
-            return "Everton David";
+        public ActionResult Index(){
+            return View();
+        }
+        public ActionResult Contatos() {
+            return View();
         }
     }
 }
