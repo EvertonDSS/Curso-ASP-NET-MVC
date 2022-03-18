@@ -11,14 +11,20 @@ namespace Introducao.Controllers
     {
         // GET: Usuario
        
-        public ActionResult Index()
+        public ActionResult Usuario()
         {
-            var usuario = new Usuario();
-            
+            var usuario = new Usuario();  
             return View(usuario);
         }
+        [HttpPost]
         public ActionResult Index(Usuario usuario) {
-
+            if (ModelState.IsValid) {
+                return View("Resultado", usuario);
+            }
+            return View(usuario);
+        }
+        public ActionResult Resultado(Usuario usuario) {
+            return View(usuario);
         }
     }
 }
